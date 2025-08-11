@@ -84,7 +84,7 @@ Con `@DeleteMapping` y `@Transactional` se asegura que la eliminación sea defin
 ## Imagenes de los endpoints
 
 
-![Crear GTópico](src/imagenes/Post_topico.png)
+![Crear Tópico](src/imagenes/Post_topico.png)
 
 ![Obtener Tópicos](src/imagenes/Get_topicos.png)
 
