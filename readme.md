@@ -83,21 +83,26 @@ Con `@DeleteMapping` y `@Transactional` se asegura que la eliminación sea defin
 
 ## Imagenes de los endpoints
 
+### Creación de tópico- Post
 ![Crear Tópico](src/imagenes/Post_topico.png)
 
+### Obtener tópicos - Get
 ![Obtener Tópicos](src/imagenes/Get_topicos.png)
 
+### Obtener un tópico - Get{id}
 ![Obtener un Tópico](src/imagenes/Get_un_topico.png)
 
+### Actualizar un tópico - Put{id}
 ![Actualizar un Tópico](src/imagenes/Put_actualizarUnTopico.png)
 
+### Eliminar un tópico - Delete{id}
 ![Eliminar un Tópico](src/imagenes/Delete_eliminarUnTopico.png)
 
+### Iniciar sesión(Login) -Post/login
 ![Iniciar sesión](src/imagenes/Post_registro_login.png)
 
+### Ejemplo mostrar un tópico con Token JWT
 ![Ejemplo obtener un Tópico con Token JWT](src/imagenes/Ejemplo_Get_con_TokenJWT.png)
-
-
 
 ## Creación de base de datos en Mysql
 Se creó una base de datos llamada foro y una tabla llamada topicos
