@@ -83,7 +83,6 @@ Con `@DeleteMapping` y `@Transactional` se asegura que la eliminación sea defin
 
 ## Imagenes de los endpoints
 
-
 ![Crear Tópico](src/imagenes/Post_topico.png)
 
 ![Obtener Tópicos](src/imagenes/Get_topicos.png)
@@ -94,6 +93,9 @@ Con `@DeleteMapping` y `@Transactional` se asegura que la eliminación sea defin
 
 ![Eliminar un Tópico](src/imagenes/Delete_eliminarUnTopico.png)
 
+![Iniciar sesión](src/imagenes/Post_registro_login.png)
+
+![Ejemplo obtener un Tópico con Token JWT](src/imagenes/Ejemplo_Get_con_TokenJWT.png)
 
 
 
@@ -113,5 +115,38 @@ create table topicos(
 
     primary key(id)
 ````
+
+## Autenticación y Seguridad con JWT
+
+El proyecto implementa un sistema de autenticación basado en JSON Web Tokens (JWT) para garantizar la seguridad de los endpoints y restringir el acceso a usuarios autenticados.
+ 
+## Características principales
+
+Generación de Token JWT:
+Al iniciar sesión con credenciales válidas, el sistema genera un token JWT que incluye información del usuario y una fecha de expiración.
+
+Validación de Token en cada petición:
+Los endpoints protegidos requieren el envío del token en el header de autorización con el formato:
+
+Authorization: Bearer <token>
+
+## Implementación de filtros personalizados:
+Se desarrollaron filtros de seguridad que interceptan las peticiones HTTP, validan la firma del token y autentican al usuario antes de permitir el acceso a los recursos.
+
+Roles y permisos:
+La aplicación puede configurarse para que ciertos endpoints estén disponibles solo para usuarios con un rol específico (ejemplo: administrador, moderador, usuario estándar). En este caso, solo tiene un solo ROLE_USER.
+
+## Flujo de autenticación
+
+El usuario envía sus credenciales (usuario/contraseña) al endpoint /login.
+
+Si las credenciales son válidas, el sistema responde con un JWT.
+
+El cliente utiliza el JWT en el encabezado de autorización para acceder a los endpoints protegidos.
+
+El filtro de validación JWT verifica el token en cada petición.
+
+Si el token es válido y no ha expirado, se permite el acceso al recurso solicitado.
+
 
 Desarrollado por: Yamileth Caldera
